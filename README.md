@@ -8,7 +8,8 @@ Samostatná práce - Zabbix server monitorování pfsense s užitím Vagrant a a
 
 ## Vagrant pfSense a monitoring SNMP pomoci Zabbix
 
-- Použijte Vagrant pro snadnou a rychlou instalaci pfSense ve virtualním prostredo VirtualBox
+- Zprovozněte si pfSense CE, dle Vašich stávajících znalostí
+- Případně použijte Vagrant pro snadnou a rychlou instalaci pfSense ve virtualním prostredo VirtualBox
 - Pomocí připravéného Vagrantfile nainstaluje pfSense CE
 - Podrobná [dokumentace](https://portal.cloud.hashicorp.com/vagrant/discover/cs-c4300/pfsense) k Vagrant instalaci pfSense na stránkách portal.cloud.hashicorp.com.
 
@@ -74,6 +75,16 @@ SNMPv2-MIB::sysLocation.0 = STRING: Dvur Kralove
 SNMPv2-MIB::sysServices.0 = INTEGER: 76
 ```
 
+Pro práci se SNMP Vám může být nápomocný tento článek - [Firewall pfSense: monitorování pomocí Zabbix a SNMP](https://www.root.cz/clanky/firewall-pfsense-monitorovani-pomoci-zabbix-a-snmp/), kde je mnoho věcí podrobně vysvětleno.
+
+### Odkazy na MIB soubory BEGEMOT pro pfSense
+
+Seznam mnoha MIB souborů - [https://mibs.observium.org](https://mibs.observium.org)
+
+- [BEGEMOT-PF-MIB](https://mibs.observium.org/mib/BEGEMOT-PF-MIB/)
+- [BEGEMOT-MIB2-MIB](https://mibs.observium.org/mib/BEGEMOT-MIB2-MIB)
+- [BEGEMOT-HOSTRES-MIB](https://mibs.observium.org/mib/BEGEMOT-HOSTRES-MIB)
+
 ## Monitorujte hosta pfSense
 
 ![Zabbix SNMP](./Images/Zabbix-SNMP-Interface.PNG)
@@ -83,15 +94,15 @@ SNMPv2-MIB::sysServices.0 = INTEGER: 76
 - Nastavte, nalinkujte šablonu - [PFSense by SNMP](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/pfsense_snmp)
 - Ověřte fungování monitoringu SNMP
 
-## Požadované známkované úkoly
+# Požadované známkované úkoly
 
 - Odlinkujte defaultní šablonu PFSense by SNMP pokud ji máte nalinkovanou.
 - Vytvořte vlastní clon šablony [PFSense by SNMP](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/pfsense_snmp) ve které budete dělat změny a nalinkujte na hosta pfsense-box.
 - Vytvořte Grafy a Dashboard v clonované sabloně např. 'Template PFSense by SNMP'. UPRAVIT
 - Upravenou šabonu vyexportujte v libovolném formátu (YAML, XML, JSON) a uložte do adresáře exports, který vytvoříte.
-- Pomocí snmpwalk získejte výpis systémových nastavení pfSense kde v SNMPv2-MIB::sysContact.0 = STRING: Jmeno Prijmeni, (vaše Jméno a Příjmení) výpis bude v textovém souboru pfsense-box.txt ve Vašem projektu.
+- Pomocí snmpwalk získejte výpis systémových nastavení pfSense kde v SNMPv2-MIB::sysContact.0 = STRING: skolni.email@sposdk.cz, (Váš školní email) výpis bude v textovém souboru pfsense-box.txt ve Vašem projektu.
 - Vytvořte serii obrázků - snímků Zabbix serveru, Grafu pfSense, Dashbordu, i Dashbordu pfSense, který jste vytvořili, Screenshoty přidejte do projektu do nějakého adresáře.
-- Do textoveho souboru NetgateID.txt vložte Vaše NID, které najdete na hlavní stránce pfSense - Netgate Device ID: c39182ca4e3acfedd06a
+- Do textoveho souboru NetgateID.txt vložte Vaše NID, které najdete na hlavní stránce pfSense - Netgate Device ID: 57aedd694474c9c3a678
 - Po dokončení a uložení změn do gitu, předejte do Teams URL Vašeho projektu na školním Githubu.
 
 ...
