@@ -85,12 +85,13 @@ SNMPv2-MIB::sysServices.0 = INTEGER: 76
 
 ## Požadované známkované úkoly
 
-- Odlinkujte defaultní šablonu PFSense by SNMP
-- Vytvořte vlastní clon šablony [PFSense by SNMP](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/pfsense_snmp) ve které budete dělat změny
-- Vytvořte Grafy a Dashboard v clonované sabloně např. 'Template PFSense by SNMP'
-- Upravenou šabonu vyexportujte v libovolném formátu (YAML, XML, JSON) a uložte do adresáře exports, který vytvoříte
+- Odlinkujte defaultní šablonu PFSense by SNMP pokud ji máte nalinkovanou.
+- Vytvořte vlastní clon šablony [PFSense by SNMP](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/pfsense_snmp) ve které budete dělat změny a nalinkujte na hosta pfsense-box.
+- Vytvořte Grafy a Dashboard v clonované sabloně např. 'Template PFSense by SNMP'. UPRAVIT
+- Upravenou šabonu vyexportujte v libovolném formátu (YAML, XML, JSON) a uložte do adresáře exports, který vytvoříte.
 - Pomocí snmpwalk získejte výpis systémových nastavení pfSense kde v SNMPv2-MIB::sysContact.0 = STRING: Jmeno Prijmeni, (vaše Jméno a Příjmení) výpis bude v textovém souboru pfsense-box.txt ve Vašem projektu.
-- Vytvořte serii obrázků - snímků Zabbix serveru, Grafu pfSense, Dashbordu, který jste vytvořili, Screenshoty pridejte do projektu do nějakého adresáře
+- Vytvořte serii obrázků - snímků Zabbix serveru, Grafu pfSense, Dashbordu, i Dashbordu pfSense, který jste vytvořili, Screenshoty přidejte do projektu do nějakého adresáře.
+- Do textoveho souboru NetgateID.txt vložte Vaše NID, které najdete na hlavní stránce pfSense - Netgate Device ID: c39182ca4e3acfedd06a
 - Po dokončení a uložení změn do gitu, předejte do Teams URL Vašeho projektu na školním Githubu.
 
 ...
